@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 /*
- * Test comment
+ * Test comment for branch
  */
 @RunWith(Parameterized.class)
 public class JunitParametarizedTest {
