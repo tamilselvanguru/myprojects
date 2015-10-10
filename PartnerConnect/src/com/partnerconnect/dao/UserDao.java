@@ -8,7 +8,9 @@ import com.partnerconnect.model.Partner;
 import com.partnerconnect.model.Critical;
 import com.partnerconnect.model.Groups;
 import com.partnerconnect.model.User;
-
+/*
+ * User db changes
+ */
 public interface UserDao {
 	public User getUser(User user) throws NotValidUserException;
 
