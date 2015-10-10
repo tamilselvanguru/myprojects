@@ -23,7 +23,7 @@ import com.partnerconnect.model.Groups;
 import com.partnerconnect.model.User;
 import com.partnerconnect.service.UserService;
 /*
-* Login controller
+* Login controller for user login
 */
 @Controller("loginController")
 public class LoginController {
