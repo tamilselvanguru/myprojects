@@ -22,7 +22,9 @@ import com.partnerconnect.model.Critical;
 import com.partnerconnect.model.Groups;
 import com.partnerconnect.model.User;
 import com.partnerconnect.service.UserService;
-
+/*
+* Login controller
+*/
 @Controller("loginController")
 public class LoginController {
 	@Autowired
