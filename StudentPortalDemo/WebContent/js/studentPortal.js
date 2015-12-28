@@ -1,5 +1,6 @@
-
-        
+      
   document.ready(function() {
-        	$("#tabs").tabs();  	    
+	  $("#tabs_div").tabs();
+	 var  myLayout = $('#container').layout();
+
           });

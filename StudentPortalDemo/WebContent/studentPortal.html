@@ -1,25 +1,50 @@
 <html>
 <head>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <LINK rel="stylesheet" type="text/css"
 	href="http://layout.jquery-dev.net/lib/css/themes/base/jquery.ui.all.css">
+<LINK rel="stylesheet" type="text/css"
+	href="http://layout.jquery-dev.net/lib/css/layout-default-latest.css">
 <link rel="stylesheet" href="css/studentPortal.css">
+<SCRIPT type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></SCRIPT>
+<SCRIPT type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></SCRIPT>
+<script type="text/javascript"
+	src="http://layout.jquery-dev.net/lib/js/jquery.layout-latest.js"></script>
+<script type="text/javascript" src="js/studentPortal.js">
+	
+</script>
+
 </head>
 
 <body>
 
-	<div class="container">
-	
-		<div class="header-footer ui-state-default ui-corner-all banner">
-			Student Portal</div>
-			<UL style="-moz-border-radius-bottomleft: 0; -moz-border-radius-bottomright: 0;">
-			<LI><A href="#tab_1"><SPAN>Tab 1</SPAN></A></LI>
-			<LI><A href="#tab_2"><SPAN>Tab 2</SPAN></A></LI>
-			<LI><A href="#tab_3"><SPAN>Tab 2</SPAN></A></LI>
-		</UL>
-			
+	<div id="container">
+		<div id="tabs_div" class="ui-layout-center">
+
+			<div class="header-footer ui-state-default ui-corner-all banner">
+				Student Portal</div>
+			<UL
+				style="-moz-border-radius-bottomleft: 0; -moz-border-radius-bottomright: 0;">
+				<LI><A href="#tab_1"><SPAN>Tab 1</SPAN></A></LI>
+				<LI><A href="#tab_2"><SPAN>Tab 2</SPAN></A></LI>
+				<LI><A href="#tab_3"><SPAN>Tab 2</SPAN></A></LI>
+			</UL>
+			<div class="ui-layout-content ui-widget-content ui-corner-bottom"
+				style="border-top: 0; padding-bottom: 1em;">
+				<div id="tab_1">
+					<p>tab1 content</p>
+				</div>
+				<div id="tab_1">
+					<p>tab2 content</p>
+				</div>
+				<div id="tab_1">
+					<p>tab3 content</p>
+				</div>
+			</div>
+
+		</div>
 	</div>
 </body>
 </html>
