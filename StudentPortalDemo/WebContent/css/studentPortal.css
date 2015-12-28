@@ -3,12 +3,27 @@
 body {
 	background-color: rgba(0, 223, 255, 0.11);
 }
-
-.banner {
+.my-tabs{
 	color: blue;
+}
+.ui-widget-header{
+	background-image: none !important;
+	background-color: #B1C0FC !important;
+}
+.banner {
 	padding: 3px 5px 5px;
 	text-align: center;
 	fontmargin-bottom: 1ex";
 	font-family: Arial bold;
 	font-size: 300%;
+	background-color: green !important;
+	color: white !important;
+	background-image: none !important;
+}
+
+#container {
+	width: 96%;
+	height: 94%;
+	margin-top: 2%;
+	margin-left: 2%;
 }
