@@ -64,8 +64,6 @@ body {
 	float: right;
 }
 
-
-
 .my-inputText {
 	margin-top: 2%;
 	margin-left: 6%;
@@ -78,7 +76,8 @@ body {
 }
 
 #search-list {
-	margin-top: 3%; margin-left : 6%;
+	margin-top: 3%;
+	margin-left: 6%;
 	list-style: none;
 	padding: 10px;
 	background-color: #B1C0FC;

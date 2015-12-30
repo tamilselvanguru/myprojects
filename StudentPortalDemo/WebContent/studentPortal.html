@@ -24,7 +24,8 @@
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
 <script type="text/javascript" src="js/studentPortal.js">
-	</script>
+	
+</script>
 
 
 </head>
@@ -54,8 +55,9 @@
 					</div>
 					<div id="innerWest">
 						<div ng-app="helloApp" ng-controller="CompanyCtrl">
-							<input type="text" ng-model="curPlace" placeholder="Search" class="inputText my-inputText">
-							
+							<input type="text" ng-model="curPlace" placeholder="Search"
+								class="inputText my-inputText">
+
 							<ul id="search-list">
 								<li id="list-item"
 									ng-repeat="company in companies | filter:curPlace">
