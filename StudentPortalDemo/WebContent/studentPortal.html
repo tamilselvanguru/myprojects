@@ -20,26 +20,38 @@
 <script type="text/javascript" src="js/studentPortal.js">
 	
 </script>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
 
 	<div id="container">
-		<div id="tabs_div" class="ui-layout-center">
+		<div id="tabs_div" class=" ui-layout-center">
 
 			<div class="header-footer ui-state-default ui-corner-all banner">
 				Student Portal</div>
-			<UL 
+			<UL
 				style="-moz-border-radius-bottomleft: 0; -moz-border-radius-bottomright: 0;">
-				<LI><A href="#tab_1"><SPAN class="my-tabs">Tab 1</SPAN></A></LI>
-				<LI><A href="#tab_2"><SPAN class="my-tabs">Tab 2</SPAN></A></LI>
-				<LI><A href="#tab_3"><SPAN class="my-tabs">Tab 3</SPAN></A></LI>
+				<LI><A href="#tab_1"><SPAN class="my-tabs">Student</SPAN></A></LI>
+				<LI><A href="#tab_2"><SPAN class="my-tabs">Department</SPAN></A></LI>
+				<LI><A href="#tab_3"><SPAN class="my-tabs">Report</SPAN></A></LI>
+				<LI><A href="#tab_4"><SPAN class="my-tabs">Help</SPAN></A></LI>
 			</UL>
 			<div class="ui-layout-content ui-widget-content ui-corner-bottom"
 				style="border-top: 0; padding-bottom: 1em;">
+
 				<div id="tab_1">
-					<p>tab1 content</p>
+					<div>
+
+						<span id="inner-heading">Student's List</span> <span
+							id="portal-heading">Details</span>
+					</div>
+					<span id="innerWest"></span>
+					 <span id="innerCenter"></span>
 				</div>
 				<div id="tab_2">
 					<p>tab2 content</p>
@@ -47,9 +59,15 @@
 				<div id="tab_3">
 					<p>tab3 content</p>
 				</div>
+				<div id="tab_4">
+					<p>tab4 content</p>
+				</div>
+
 			</div>
 
 		</div>
+
+		<DIV class=" pane ui-layout-south">south</DIV>
 	</div>
 </body>
 </html>
