@@ -3,13 +3,16 @@
 body {
 	background-color: rgba(0, 223, 255, 0.11);
 }
-.my-tabs{
+
+.my-tabs {
 	color: blue;
 }
-.ui-widget-header{
+
+.ui-widget-header {
 	background-image: none !important;
 	background-color: #B1C0FC !important;
 }
+
 .banner {
 	padding: 3px 5px 5px;
 	text-align: center;
@@ -27,39 +30,68 @@ body {
 	margin-top: 2%;
 	margin-left: 2%;
 }
-#inner-heading{
+
+#inner-heading {
 	min-width: 30%;
 	max-width: 30%;
-	
 	color: blue;
-	font-size:20;
+	font-size: 20;
 	float: left;
 }
-#filter{
-	margin-top: 2%;
-	margin-left: 2%;
-}
-#portal-heading{
+
+#portal-heading {
 	min-width: 70%;
 	max-width: 70%;
 	color: blue;
-	font-size:20;
+	font-size: 20;
 	float: right;
 }
-#innerWest{
-	
+
+#innerWest {
 	min-width: 25%;
 	max-width: 25%;
 	height: 480px;
-	align:center;
+	align: center;
 	border: 6px solid blue;
 	float: left;
 }
-#innerCenter{
-	
+
+#innerCenter {
 	min-width: 70%;
 	max-width: 70%;
 	height: 480px;
 	border: 6px solid blue;
 	float: right;
+}
+
+
+
+.my-inputText {
+	margin-top: 2%;
+	margin-left: 6%;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: rgba(245, 245, 245, 0.07);
+	box-shadow: 1px 1px 1px 1px #ccc;
+	width: 230px;
+	height: 30px;
+}
+
+#search-list {
+	margin-top: 3%; margin-left : 6%;
+	list-style: none;
+	padding: 10px;
+	background-color: #B1C0FC;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	width: 210px;
+	margin-left: 6%;
+}
+
+#list-item {
+	border: 1px solid #ccc;
+	border-right: none;
+	border-left: none;
+	padding: 2px;
+	text-align: center;
 }
