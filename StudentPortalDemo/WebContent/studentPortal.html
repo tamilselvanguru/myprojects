@@ -1,4 +1,4 @@
-<html>
+<html ng-app="StudentApp">
 <head>
 
 <LINK rel="stylesheet" type="text/css"
@@ -47,25 +47,139 @@
 			<div class="ui-layout-content ui-widget-content ui-corner-bottom"
 				style="border-top: 0; padding-bottom: 1em;">
 
-				<div id="tab_1">
+				<div id="tab_1" ng-controller="StudentCtrl">
 					<div>
 
 						<span id="inner-heading">Student's List</span> <span
 							id="portal-heading">Details</span>
 					</div>
 					<div id="innerWest">
-						<div ng-app="helloApp" ng-controller="CompanyCtrl">
+						<div>
 							<input type="text" ng-model="curPlace" placeholder="Search"
 								class="inputText my-inputText">
 
 							<ul id="search-list">
 								<li id="list-item"
-									ng-repeat="company in companies | filter:curPlace">
-									{{company}}</li>
+									ng-repeat="student in students | filter:curPlace"><a
+									ng-href="#" ng-click="selectedStudent(student)">{{student.name}}</a></li>
 							</ul>
 						</div>
 					</div>
-					<div id="innerCenter"></div>
+					<div id="innerCenter">
+						<div id="my-label" ng-show="IsMyLabelVisible">
+							<form>
+								<fieldset>
+									<legend>Personalia:</legend>
+									<table>
+										<tr>
+											<td><label>Name:</label></td>
+
+											<td>{{student.name}}</td>
+										</tr>
+										<tr>
+											<td><label>Department:</label></td>
+
+											<td>{{student.deparment}}</td>
+										</tr>
+										<tr>
+											<td><label>Id Number:</label></td>
+
+											<td>{{student.idno}}</td>
+										</tr>
+										<tr>
+											<td><label>Phone:</label></td>
+
+											<td>{{student.phno}}</td>
+										</tr>
+										<tr>
+											<td><label>Address:</label></td>
+										<tr>
+											<td/>
+											<td>{{student.address[0].streetAddress}}</td>
+										</tr>
+										<tr>
+											<td/>
+											<td>{{student.address[0].city}}</td>
+										</tr>
+										<tr>
+											<td/>
+											<td>{{student.address[0].state}}</td>
+										</tr>
+										<tr>
+											<td/>
+											<td>{{student.address[0].zipcode}}</td>
+										</tr>
+										<tr>
+											<td><button type="button" ng-click="show()"
+													class="btn btn-info my-button">Edit</button></td>
+										</tr>
+									</table>
+
+								</fieldset>
+							</form>
+						</div>
+						<div id="my-label" ng-show="IsVisible">
+							<form>
+								<fieldset>
+									<table>
+										<tr>
+											<td><label>Name:</label></td>
+											<td><input type="text" id="name" ng-model="student.name"></td>
+										</tr>
+										<tr>
+											<td><label>Department:</label></td>
+											<td><input type="text" id="dept"
+												ng-model="student.deparment"></td>
+										</tr>
+										<tr>
+											<td><label>Id Number:</label></td>
+											<td><input type="text" id="idno" ng-model="student.idno"></td>
+										</tr>
+										<tr>
+											<td><label>Phone:</label></td>
+											<td><input type="text" id="phno" ng-model="student.phno"></td>
+										</tr>
+										<tr>
+											<td><label>Address:</label></td>
+										<tr>
+											<td />
+											<td><input type="text" id="streetAddress"
+												ng-model="student.address[0].streetAddress"></td>
+										</tr>
+
+										<tr>
+											<td />
+											<td><input type="text" id="city"
+												ng-model="student.address[0].city"></td>
+										</tr>
+
+										<tr>
+											<td />
+											<td><input type="text" id="state"
+												ng-model="student.address[0].state"></td>
+										</tr>
+
+										<tr>
+											<td />
+											<td><input type="text" id="zipcode"
+												ng-model="student.address[0].zipcode"></td>
+										</tr>
+
+
+										<tr>
+											<td/>
+											<td>
+												<div class="btn-group">
+													<button type="button" class="btn btn-info my-button">Save</button>
+													<button type="button" class="btn btn-info my-button">Cancel</button>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</fieldset>
+							</form>
+						</div>
+					</div>
 				</div>
 				<div id="tab_2">
 					<p>tab2 content</p>
@@ -76,7 +190,6 @@
 				<div id="tab_4">
 					<p>tab4 content</p>
 				</div>
-
 			</div>
 
 		</div>

@@ -67,7 +67,6 @@ body {
 .my-inputText {
 	margin-top: 2%;
 	margin-left: 6%;
-	border: 1px solid #ccc;
 	border-radius: 10px;
 	background-color: rgba(245, 245, 245, 0.07);
 	box-shadow: 1px 1px 1px 1px #ccc;
@@ -82,7 +81,7 @@ body {
 	padding: 10px;
 	background-color: #B1C0FC;
 	border-radius: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid black !important;
 	width: 210px;
 	margin-left: 6%;
 }
@@ -93,4 +92,27 @@ body {
 	border-left: none;
 	padding: 2px;
 	text-align: center;
+}
+.my-button
+{
+	background-color: #B1C0FC !important;
+	border: 1px solid black !important;
+	position: absolute;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+input{
+	border: 1px solid black !important;
+	
+}
+#my-label{
+	border: 2px solid black !important;
+	border-radius: 10px;
+	margin-top: 4%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    margin-right: 4%;
+    height:400px;
+	
 }
