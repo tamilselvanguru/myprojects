@@ -70,7 +70,16 @@ body {
 	border-radius: 10px;
 	background-color: rgba(245, 245, 245, 0.07);
 	box-shadow: 1px 1px 1px 1px #ccc;
-	width: 230px;
+	width: 60%;
+	height: 30px;
+}
+.addButton{
+	margin-top: 2%;
+	margin-left: 6%;
+	border-radius: 10px;
+	border: 1px solid black !important;
+	background-color: #B1C0FC !important;
+	width: 20%;
 	height: 30px;
 }
 

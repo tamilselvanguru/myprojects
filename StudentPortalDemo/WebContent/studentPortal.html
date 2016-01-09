@@ -57,6 +57,7 @@
 						<div>
 							<input type="text" ng-model="curPlace" placeholder="Search"
 								class="inputText my-inputText">
+								<button type="button" class="btn btn-info addButton" ng-click="add()">Add</button>
 
 							<ul id="search-list">
 								<li id="list-item"
@@ -95,19 +96,19 @@
 											<td><label>Address:</label></td>
 										<tr>
 											<td/>
-											<td>{{student.address[0].streetAddress}}</td>
+											<td>{{student.address.streetAddress}}</td>
 										</tr>
 										<tr>
 											<td/>
-											<td>{{student.address[0].city}}</td>
+											<td>{{student.address.city}}</td>
 										</tr>
 										<tr>
 											<td/>
-											<td>{{student.address[0].state}}</td>
+											<td>{{student.address.state}}</td>
 										</tr>
 										<tr>
 											<td/>
-											<td>{{student.address[0].zipcode}}</td>
+											<td>{{student.address.zipcode}}</td>
 										</tr>
 										<tr>
 											<td><button type="button" ng-click="show()"
@@ -124,45 +125,45 @@
 									<table>
 										<tr>
 											<td><label>Name:</label></td>
-											<td><input type="text" id="name" ng-model="student.name"></td>
+											<td><input type="text" id="name" ng-model="student.name" ng-readonly="isReadonly"></td>
 										</tr>
 										<tr>
 											<td><label>Department:</label></td>
 											<td><input type="text" id="dept"
-												ng-model="student.deparment"></td>
+												ng-model="student.deparment" ng-readonly="isReadonly"></td>
 										</tr>
 										<tr>
 											<td><label>Id Number:</label></td>
-											<td><input type="text" id="idno" ng-model="student.idno"></td>
+											<td><input type="text" id="idno" ng-model="student.idno" ng-readonly="isReadonly"></td>
 										</tr>
 										<tr>
 											<td><label>Phone:</label></td>
-											<td><input type="text" id="phno" ng-model="student.phno"></td>
+											<td><input type="text" id="phno" ng-model="student.phno" ng-readonly="isReadonly"></td>
 										</tr>
 										<tr>
 											<td><label>Address:</label></td>
 										<tr>
 											<td />
 											<td><input type="text" id="streetAddress"
-												ng-model="student.address[0].streetAddress"></td>
+												ng-model="student.address.streetAddress" ng-readonly="isReadonly"></td>
 										</tr>
 
 										<tr>
 											<td />
 											<td><input type="text" id="city"
-												ng-model="student.address[0].city"></td>
+												ng-model="student.address.city" ng-readonly="isReadonly"></td>
 										</tr>
 
 										<tr>
 											<td />
 											<td><input type="text" id="state"
-												ng-model="student.address[0].state"></td>
+												ng-model="student.address.state" ng-readonly="isReadonly"></td>
 										</tr>
 
 										<tr>
 											<td />
 											<td><input type="text" id="zipcode"
-												ng-model="student.address[0].zipcode"></td>
+												ng-model="student.address.zipcode" ng-readonly="isReadonly"></td>
 										</tr>
 
 
@@ -170,7 +171,7 @@
 											<td/>
 											<td>
 												<div class="btn-group">
-													<button type="button" class="btn btn-info my-button">Save</button>
+													<button type="button" class="btn btn-info my-button" ng-click="save(student)">Save</button>
 													<button type="button" class="btn btn-info my-button">Cancel</button>
 												</div>
 											</td>
