@@ -1,5 +1,7 @@
 package com.studentportal.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public void updateStudent(Student student) {
 		studentDAO.updateStudent(student);
+	}
+
+	@Override
+	public List<Student> getStudentList() {
+		return studentDAO.getStudentList();
 	}
 
 }

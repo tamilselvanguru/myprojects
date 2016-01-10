@@ -10,8 +10,13 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
+
 @Entity
 @Table(name = "Student")
+
 public class Student {
 	private int studentID;
 	private String name;
@@ -67,7 +72,7 @@ public class Student {
 	public void setPhno(long phno) {
 		this.phno = phno;
 	}
-
+	
 	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
 	public Address getAddress() {
 		return address;

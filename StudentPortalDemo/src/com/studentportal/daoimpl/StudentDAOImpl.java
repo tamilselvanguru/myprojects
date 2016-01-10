@@ -1,5 +1,9 @@
 package com.studentportal.daoimpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +27,17 @@ public class StudentDAOImpl implements StudentDAO {
 	@Override
 	public void updateStudent(Student student) {
 		getCurrentSession().saveOrUpdate(student);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Student> getStudentList() {
+		Criteria criteria = getCurrentSession().createCriteria(Student.class);
+		List<Student> list = new ArrayList<Student>();
+		list = criteria.list();
+		if (list != null && list.size() > 0) {
+		}
+		return list;
 	}
 
 }
