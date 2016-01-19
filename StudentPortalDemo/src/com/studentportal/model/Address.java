@@ -12,10 +12,9 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name = "Address")
-@JsonIgnoreProperties({ "student" })
+@JsonIgnoreProperties({"student"})
 public class Address {
 	private int studentID;
 	private String streetAddress;
@@ -71,7 +70,7 @@ public class Address {
 	public void setZipcode(long zipcode) {
 		this.zipcode = zipcode;
 	}
-	
+
 	@OneToOne
 	@PrimaryKeyJoinColumn
 	public Student getStudent() {
