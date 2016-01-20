@@ -26,8 +26,10 @@ StudentApp.controller("StudentCtrl", function($scope, $http) {
 	};
 	$scope.add = function() {
 		$scope.IsMyLabelVisible = false;
+		$scope.isReadonly = false;
 		$scope.IsVisible = true;
 		$scope.student = null;
+		
 
 	};
 	$scope.save = function(student) {
@@ -41,6 +43,20 @@ StudentApp.controller("StudentCtrl", function($scope, $http) {
 			},
 			// data :JSON.stringify(student)
 			data : student
+		}).success(function(data) {
+			alert(data.response);
+		});
+	};
+	$scope.deleteSelectedStudent = function(student) {
+		alert(JSON.stringify(student.studentID));
+		$http({
+			url : 'http://localhost:8080/StudentPortalDemo/deleteStudent',
+			method : 'DELETE',
+			headers : {
+				'Content-Type' : 'application/json'
+			},
+			// data :JSON.stringify(student.studentID)
+			data : student.studentID
 		}).success(function(data) {
 			alert(data.response);
 		});

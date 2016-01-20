@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.studentportal.model.Address;
@@ -38,11 +39,18 @@ public class StudentController {
 	public @ResponseBody
 	List<Student> getStudentList() {
 		List<Student> list = studentService.getStudentList();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-		}
+
 		return list;
 
+	}
+
+	@RequestMapping(value = "/deleteStudent", method = RequestMethod.DELETE)
+	public @ResponseBody
+	Map deleteStudent(@RequestBody int id) {
+		System.out.println(id);
+		Map map = new HashMap<>();
+		studentService.deleteStudent(id);
+		map.put("response", "deleted" + id + "successfully");
+		return map;
 	}
 }

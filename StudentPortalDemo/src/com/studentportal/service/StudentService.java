@@ -8,4 +8,5 @@ public interface StudentService {
 	public void updateStudent(Student student);
 
 	public List<Student> getStudentList();
+	public void deleteStudent(int id);
 }

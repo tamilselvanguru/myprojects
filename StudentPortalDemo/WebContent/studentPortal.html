@@ -62,7 +62,8 @@
 							<ul id="search-list">
 								<li id="list-item"
 									ng-repeat="student in students | filter:curPlace"><a
-									ng-href="#" ng-click="selectedStudent(student)">{{student.name}}</a></li>
+									ng-href="#" ng-click="selectedStudent(student)">{{student.name}}<img  class="deleteButton" ng-src="images/delete.png" alt="Delete" ng-click="deleteSelectedStudent(student)">
+						</a></li>
 							</ul>
 						</div>
 					</div>

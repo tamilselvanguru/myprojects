@@ -125,3 +125,7 @@ input{
     height:400px;
 	
 }
+.deleteButton{
+	width: 20%;
+	height: 25px;
+}

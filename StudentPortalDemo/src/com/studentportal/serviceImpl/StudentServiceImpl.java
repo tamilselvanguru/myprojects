@@ -24,4 +24,9 @@ public class StudentServiceImpl implements StudentService {
 		return studentDAO.getStudentList();
 	}
 
+	@Override
+	public void deleteStudent(int id) {
+studentDAO.deleteStudent(id);		
+	}
+
 }

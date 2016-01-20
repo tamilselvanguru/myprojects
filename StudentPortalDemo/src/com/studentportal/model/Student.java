@@ -1,6 +1,4 @@
 package com.studentportal.model;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,15 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-
 
 @Entity
 @Table(name = "Student")
-
 public class Student {
 	private int studentID;
 	private String name;
@@ -72,8 +66,9 @@ public class Student {
 	public void setPhno(long phno) {
 		this.phno = phno;
 	}
-	
-	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+
+	@OneToOne(mappedBy = "student",orphanRemoval=true)
+	@Cascade(org.hibernate.annotations.CascadeType.ALL)
 	public Address getAddress() {
 		return address;
 	}
