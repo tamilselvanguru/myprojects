@@ -49,6 +49,7 @@ public class StudentDAOImpl implements StudentDAO {
 		System.out.println("inside query");
 	query.executeUpdate();
 	int query2=getCurrentSession().createQuery("delete from Address where studentID="+id).executeUpdate();
+	int query3=getCurrentSession().createQuery("delete from Marks where studentID="+id).executeUpdate();
 	}
 
 }

@@ -1,4 +1,5 @@
 package com.studentportal.model;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,7 @@ public class Student {
 	private int idno;
 	private long phno;
 	private Address address;
+	private Marks marks;
 
 	@Id
 	@GeneratedValue(generator = "increment")
@@ -67,7 +69,7 @@ public class Student {
 		this.phno = phno;
 	}
 
-	@OneToOne(mappedBy = "student",orphanRemoval=true)
+	@OneToOne(mappedBy = "student")
 	@Cascade(org.hibernate.annotations.CascadeType.ALL)
 	public Address getAddress() {
 		return address;
@@ -76,11 +78,21 @@ public class Student {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	@OneToOne(mappedBy = "student")
+	@Cascade(org.hibernate.annotations.CascadeType.ALL)
+	public Marks getMarks() {
+		return marks;
+	}
+
+	public void setMarks(Marks marks) {
+		this.marks = marks;
+	}
 
 	@Override
 	public String toString() {
-		return "Student [name=" + name + ", deparment=" + deparment + ", idno="
-				+ idno + ", phno=" + phno + ", address=" + address + "]";
+		return "Student [studentID=" + studentID + ", name=" + name
+				+ ", deparment=" + deparment + ", idno=" + idno + ", phno="
+				+ phno + ", address=" + address + ", marks=" + marks + "]";
 	}
 
 }

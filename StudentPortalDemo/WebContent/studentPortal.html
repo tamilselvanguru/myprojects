@@ -22,6 +22,11 @@
 	src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
 <script type="text/javascript" src="js/studentPortal.js">
 	
@@ -39,7 +44,7 @@
 				Student Portal</div>
 			<UL
 				style="-moz-border-radius-bottomleft: 0; -moz-border-radius-bottomright: 0;">
-				<LI><A href="#tab_1"><SPAN class="my-tabs" >Student</SPAN></A></LI>
+				<LI><A href="#tab_1"><SPAN class="my-tabs">Student</SPAN></A></LI>
 				<LI><A href="#tab_2"><SPAN class="my-tabs">Department</SPAN></A></LI>
 				<LI><A href="#tab_3"><SPAN class="my-tabs">Report</SPAN></A></LI>
 				<LI><A href="#tab_4"><SPAN class="my-tabs">Help</SPAN></A></LI>
@@ -57,13 +62,16 @@
 						<div>
 							<input type="text" ng-model="curPlace" placeholder="Search"
 								class="inputText my-inputText">
-								<button type="button" class="btn btn-info addButton" ng-click="add()">Add</button>
+							<button type="button" class="btn btn-info addButton"
+								ng-click="add()">Add</button>
 
 							<ul id="search-list">
 								<li id="list-item"
 									ng-repeat="student in students | filter:curPlace"><a
-									ng-href="#" ng-click="selectedStudent(student)">{{student.name}}<img  class="deleteButton" ng-src="images/delete.png" alt="Delete" ng-click="deleteSelectedStudent(student)">
-						</a></li>
+									ng-href="#" ng-click="selectedStudent(student)">{{student.name}}<img
+										class="deleteButton" ng-src="images/delete.png" alt="Delete"
+										ng-click="deleteSelectedStudent(student)">
+								</a></li>
 							</ul>
 						</div>
 					</div>
@@ -96,24 +104,31 @@
 										<tr>
 											<td><label>Address:</label></td>
 										<tr>
-											<td/>
+											<td />
 											<td>{{student.address.streetAddress}}</td>
 										</tr>
 										<tr>
-											<td/>
+											<td />
 											<td>{{student.address.city}}</td>
 										</tr>
 										<tr>
-											<td/>
+											<td />
 											<td>{{student.address.state}}</td>
 										</tr>
 										<tr>
-											<td/>
+											<td />
 											<td>{{student.address.zipcode}}</td>
 										</tr>
 										<tr>
 											<td><button type="button" ng-click="show()"
-													class="btn btn-info my-button">Edit</button></td>
+													class="btn btn-info mybutton">Edit</button></td>
+											<td><button ng-click="toggleModal()"
+													class="btn btn-info mybutton">Student's Mark</button> <modal
+													title="MarkList" visible="showModal">
+
+												<div class="gridStyle" ng-grid="gridOptions"></div>
+												</modal>
+												</td>
 										</tr>
 									</table>
 
@@ -126,7 +141,8 @@
 									<table>
 										<tr>
 											<td><label>Name:</label></td>
-											<td><input type="text" id="name" ng-model="student.name" ng-readonly="isReadonly"></td>
+											<td><input type="text" id="name" ng-model="student.name"
+												ng-readonly="isReadonly"></td>
 										</tr>
 										<tr>
 											<td><label>Department:</label></td>
@@ -135,18 +151,21 @@
 										</tr>
 										<tr>
 											<td><label>Id Number:</label></td>
-											<td><input type="text" id="idno" ng-model="student.idno" ng-readonly="isReadonly"></td>
+											<td><input type="text" id="idno" ng-model="student.idno"
+												ng-readonly="isReadonly"></td>
 										</tr>
 										<tr>
 											<td><label>Phone:</label></td>
-											<td><input type="text" id="phno" ng-model="student.phno" ng-readonly="isReadonly"></td>
+											<td><input type="text" id="phno" ng-model="student.phno"
+												ng-readonly="isReadonly"></td>
 										</tr>
 										<tr>
 											<td><label>Address:</label></td>
 										<tr>
 											<td />
 											<td><input type="text" id="streetAddress"
-												ng-model="student.address.streetAddress" ng-readonly="isReadonly"></td>
+												ng-model="student.address.streetAddress"
+												ng-readonly="isReadonly"></td>
 										</tr>
 
 										<tr>
@@ -166,14 +185,38 @@
 											<td><input type="text" id="zipcode"
 												ng-model="student.address.zipcode" ng-readonly="isReadonly"></td>
 										</tr>
-
-
+                                           <tr>
+											<td><label>Tamil Mark:</label></td>
+											<td><input type="text" id="tamil"
+												ng-model="student.marks.tamil" ng-readonly="isReadonly"></td>
+										</tr>
 										<tr>
-											<td/>
+											<td><label>English Mark:</label></td>
+											<td><input type="text" id="english"
+												ng-model="student.marks.english" ng-readonly="isReadonly"></td>
+										</tr>
+										<tr>
+											<td><label>Maths Mark:</label></td>
+											<td><input type="text" id="maths"
+												ng-model="student.marks.maths" ng-readonly="isReadonly"></td>
+										</tr>
+										<tr>
+											<td><label>Science Mark:</label></td>
+											<td><input type="text" id="science"
+												ng-model="student.marks.science" ng-readonly="isReadonly"></td>
+										</tr>
+                                          <tr>
+											<td><label>Social Science Mark:</label></td>
+											<td><input type="text" id="socialScience"
+												ng-model="student.marks.socialScience" ng-readonly="isReadonly"></td>
+										</tr>
+										<tr>
+											<td />
 											<td>
 												<div class="btn-group">
-													<button type="button" class="btn btn-info my-button" ng-click="save(student)">Save</button>
-													<button type="button" class="btn btn-info my-button">Cancel</button>
+													<button type="button" class="btn btn-info mybutton "
+														ng-click="save(student)">Save</button>
+													<button type="button" class="btn btn-info mybutton">Cancel</button>
 												</div>
 											</td>
 										</tr>

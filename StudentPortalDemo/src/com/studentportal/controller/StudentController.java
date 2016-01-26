@@ -5,15 +5,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.studentportal.model.Address;
+import com.studentportal.model.Marks;
 import com.studentportal.model.Student;
 import com.studentportal.service.StudentService;
 
@@ -28,6 +27,8 @@ public class StudentController {
 		System.out.println(student);
 		Address address = student.getAddress();
 		address.setStudent(student);
+		Marks marks = student.getMarks();
+		marks.setStudent(student);
 		studentService.updateStudent(student);
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("response", "successfully added");
